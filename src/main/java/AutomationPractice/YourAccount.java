@@ -8,41 +8,45 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class YourAccount extends BasePage{
-    public YourAccount(WebDriver webDriver){
-        super(webDriver);
-        PageFactory.initElements(getWebDriver(),this);
-    }
-
+public class YourAccount extends BasePage {
     @FindBy(className = "icon-building")
     private WebElement myAddresses;
-
     @FindBy(className = "icon-user")
     private WebElement personalInformation;
-
     @FindBy(className = "account")
     private WebElement accountName;
 
-    public String getAccountNameText(){
+    public YourAccount(WebDriver webDriver) {
+        super(webDriver);
+        PageFactory.initElements(getWebDriver(), this);
+    }
+
+    public String getAccountNameText() {
         return getAccountName().getText();
     }
 
-    public MyAddresses clickMyAddresses(){
+    public MyAddresses clickMyAddresses() {
         getMyAddresses().click();
         new WebDriverWait(getWebDriver(), 5).until(ExpectedConditions.visibilityOfElementLocated(By.className("page-subheading")));
-
         return new MyAddresses(getWebDriver());
     }
 
 
-    public MyPersonalInformation  clickMyPersonalInformation(){
+    public MyPersonalInformation clickMyPersonalInformation() {
         getPersonalInformation().click();
         new WebDriverWait(getWebDriver(), 5).until(ExpectedConditions.visibilityOfElementLocated(By.id("email")));
-
         return new MyPersonalInformation(getWebDriver());
     }
 
-    public WebElement getAccountName(){ return accountName; }
-    public WebElement getMyAddresses(){ return myAddresses; }
-    public WebElement getPersonalInformation(){ return personalInformation; }
+    public WebElement getAccountName() {
+        return accountName;
+    }
+
+    public WebElement getMyAddresses() {
+        return myAddresses;
+    }
+
+    public WebElement getPersonalInformation() {
+        return personalInformation;
+    }
 }

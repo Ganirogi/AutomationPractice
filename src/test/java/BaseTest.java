@@ -3,20 +3,27 @@ import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class BaseTest {
+public abstract class BaseTest {
 
-    WebDriver webDriver;
+    private WebDriver webDriver;
 
     @Before
-    public void init(){
-        System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver.exe");
+    public void init() {
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         webDriver = new ChromeDriver();
+        webDriver.manage().window().maximize();
     }
 
-    public void goToLandingPage(){ webDriver.get("http://automationpractice.com/index.php");}
+    protected void goToLoadingPage() {
+        webDriver.get("http://automationpractice.com/index.php");
+    }
 
-    public WebDriver getWebDriver(){ return webDriver; }
+    protected WebDriver getWebDriver() {
+        return webDriver;
+    }
 
     @After
-    public void after(){ webDriver.quit();}
+    public void after() {
+        webDriver.quit();
+    }
 }

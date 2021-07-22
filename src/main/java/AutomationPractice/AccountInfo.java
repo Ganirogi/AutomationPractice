@@ -81,7 +81,6 @@ public class AccountInfo extends BasePage{
     public YourAccount clickRegister(){
         getRegister().click();
         new WebDriverWait(getWebDriver(),5).until(ExpectedConditions.visibilityOfElementLocated(By.className("account")));
-
         return new YourAccount(getWebDriver());
     }
 
