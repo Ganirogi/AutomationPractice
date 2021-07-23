@@ -2,10 +2,14 @@ package AutomationPractice;
 
 import org.openqa.selenium.WebDriver;
 
-public class BasePage {
-    public WebDriver webDriver;
+public abstract class BasePage {
+    private final WebDriver webDriver;
 
-    public BasePage(WebDriver webDriver){ this.webDriver = webDriver; }
+    protected BasePage(WebDriver webDriver) {
+        this.webDriver = webDriver;
+    }
 
-    public WebDriver getWebDriver(){ return webDriver; }
+    protected WebDriver getWebDriver() {
+        return webDriver;
+    }
 }
