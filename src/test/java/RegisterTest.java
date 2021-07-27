@@ -12,7 +12,7 @@ public class RegisterTest extends BaseTest{
         goToLoadingPage();
         SignInPage signIn = new SignInPage(getWebDriver());
         CreateOrLogIn createOrLogIn = signIn.clickSignIn();
-        createOrLogIn.emailVerification("testaccount123@gmail.com");
+        createOrLogIn.emailVerification("testaccount000@gmail.com");
         AccountInfo accountInfo = createOrLogIn.clickCreateAccount();
         accountInfo.completeRegisterForm("test", "test", "testpassword", "17779 HACIENDA BLVD , CALIFORNIA CITY, CA", "California City", "93505", "6613909725", "home");
         YourAccount yourAccount = accountInfo.clickRegister();
