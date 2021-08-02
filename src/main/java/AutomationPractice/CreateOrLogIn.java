@@ -8,17 +8,13 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class CreateOrLogIn extends BasePage{
-    public CreateOrLogIn(WebDriver webDriver){
-        super(webDriver);
-        PageFactory.initElements(getWebDriver(), this);
-    }
+public class CreateOrLogIn extends BasePage {
 
     @FindBy(id = "email_create")
     private WebElement addEmail;
 
     @FindBy(id = "SubmitCreate")
-    private WebElement buttonCreateAnAccount;
+    private WebElement createAccountButton;
 
     @FindBy(id = "email")
     private WebElement emailAddress;
@@ -27,34 +23,58 @@ public class CreateOrLogIn extends BasePage{
     private WebElement password;
 
     @FindBy(id = "SubmitLogin")
-    private WebElement signIn;
+    private WebElement signInButton;
 
-    public void emailVerification(String email){
+    @FindBy(xpath = "//*[@id=\"center_column\"]/div[1]/ol/li")
+    private WebElement alertDanger;
+
+    public CreateOrLogIn(WebDriver webDriver) {
+        super(webDriver);
+        PageFactory.initElements(getWebDriver(), this);
+    }
+
+    public void emailVerification(String email) {
         getAddEmail().sendKeys(email);
     }
 
-    public AccountInfo clickCreateAccount(){
-        getButtonCreateAnAccount().click();
+    public AccountInfo clickCreateAccount() {
+        getCreateAccountButton().click();
         new WebDriverWait(getWebDriver(), 5).until(ExpectedConditions.visibilityOfElementLocated(By.id("id_gender1")));
-
         return new AccountInfo(getWebDriver());
     }
 
-    public void logIn(String email, String password){
+    public void logIn(String email, String password) {
         getEmailAddress().sendKeys(email);
         getPassword().sendKeys(password);
     }
 
-    public YourAccount signIn(){
-        getSignIn().click();
-        new WebDriverWait(getWebDriver(),5).until(ExpectedConditions.visibilityOfElementLocated(By.className("account")));
-
+    public YourAccount signIn() {
+        getSignInButton().click();
+        new WebDriverWait(getWebDriver(), 5).until(ExpectedConditions.visibilityOfElementLocated(By.className("account")));
         return new YourAccount(getWebDriver());
     }
 
-    public WebElement getAddEmail(){ return addEmail; }
-    public WebElement getButtonCreateAnAccount(){ return buttonCreateAnAccount; }
-    public WebElement getEmailAddress(){ return emailAddress; }
-    public WebElement getPassword(){ return password; }
-    public WebElement getSignIn(){ return signIn; }
+    public WebElement getAddEmail() {
+        return addEmail;
+    }
+
+    public WebElement getCreateAccountButton() {
+        return createAccountButton;
+    }
+
+    public WebElement getEmailAddress() {
+        return emailAddress;
+    }
+
+    public WebElement getPassword() {
+        return password;
+    }
+
+    public WebElement getSignInButton() {
+        return signInButton;
+    }
+
+    public WebElement getAlertDanger() {
+        return alertDanger;
+    }
 }

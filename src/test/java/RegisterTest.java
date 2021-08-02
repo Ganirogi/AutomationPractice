@@ -9,14 +9,13 @@ public class RegisterTest extends BaseTest{
 
     @Test
     public void register() {
-        goToLandingPage();
-
+        goToLoadingPage();
         SignInPage signIn = new SignInPage(getWebDriver());
         CreateOrLogIn createOrLogIn = signIn.clickSignIn();
-        createOrLogIn.emailVerification("dinugv94@gmail.com");
+        createOrLogIn.emailVerification("testaccount123@gmail.com");
         AccountInfo accountInfo = createOrLogIn.clickCreateAccount();
-        accountInfo.completeRegisterForm("Giorgian Vasile", "Dinu", "P4ssword!", "17779 HACIENDA BLVD , CALIFORNIA CITY, CA", "California City", "93505", "6613909725", "5759 HIGHWAY 58,CALIFORNIA CITY");
+        accountInfo.completeRegisterForm("test", "test", "testpassword", "17779 HACIENDA BLVD , CALIFORNIA CITY, CA", "California City", "93505", "6613909725", "home");
         YourAccount yourAccount = accountInfo.clickRegister();
-        Assert.assertEquals("Account name","Giorgian Vasile Dinu", yourAccount.getAccountNameText());
+        Assert.assertEquals("Account name","test test", yourAccount.getAccountNameText());
     }
 }
