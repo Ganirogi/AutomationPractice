@@ -8,6 +8,6 @@ Feature: Test login functionality
 
 
     Examples:
-      | email                    | password     |
-      | testaccount000@gmail.com | testpassword |
+      | email                     | password     |
+      | testtestaccount@yahoo.com | testpassword |
 

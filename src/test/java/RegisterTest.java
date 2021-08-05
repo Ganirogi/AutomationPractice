@@ -9,7 +9,7 @@ public class RegisterTest extends BaseTest{
 
     @Test
     public void register() {
-        goToLoadingPage();
+        goToLandingPage();
         SignInPage signIn = new SignInPage(getWebDriver());
         CreateOrLogIn createOrLogIn = signIn.clickSignIn();
         createOrLogIn.emailVerification("testaccount000@gmail.com");

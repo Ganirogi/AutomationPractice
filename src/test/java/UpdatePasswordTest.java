@@ -14,11 +14,11 @@ public class UpdatePasswordTest extends BaseTest{
     public static final String newpassword = "newtestpassword";
     @Test
     public void updatePassword(){
-        goToLoadingPage();
+        goToLandingPage();
         SignInPage signIn = new SignInPage(getWebDriver());
         CreateOrLogIn createOrLogIn = signIn.clickSignIn();
         createOrLogIn.logIn(email, password);
-        createOrLogIn.getSignInButton().click();
+        createOrLogIn.clickSignin();
         YourAccount yourAccount=new YourAccount(getWebDriver());
         yourAccount.clickMyPersonalInformation();
         MyPersonalInformation myPersonalInformation=new MyPersonalInformation(getWebDriver());
