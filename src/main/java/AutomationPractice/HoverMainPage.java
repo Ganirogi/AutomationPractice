@@ -12,6 +12,8 @@ public class HoverMainPage extends BasePage{
         PageFactory.initElements(getWebDriver(), this);
     }
 
+    Actions actions = new Actions(getWebDriver());
+
     @FindBy (css = "#homefeatured > li:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")
     private WebElement hoverBlouse;
 
@@ -23,7 +25,6 @@ public class HoverMainPage extends BasePage{
 
 
     public void hoverPage(){
-        Actions actions = new Actions(webDriver);
         actions.moveToElement(getHoverBlouse()).perform();
     }
 

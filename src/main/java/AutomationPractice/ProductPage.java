@@ -27,8 +27,8 @@ public class ProductPage extends BasePage{
     @FindBy (css = "#group_1")
     private WebElement dropdownSize;
 
-    @FindBy (css = "#color_8")
-    private WebElement selectWhite;
+    @FindBy (css = "#color_11")
+    private WebElement selectBlack;
 
     @FindBy (css = "button.exclusive")
     private WebElement clickAddCart;
@@ -46,11 +46,12 @@ public class ProductPage extends BasePage{
         Select s = new Select(getDropdownSize());
         s.selectByVisibleText("M");
     }
-    public void pickColorWhite(){
-        getSelectWhite().click();
+    public void pickColorBlack(){
+        getSelectBlack().click();
     }
-    public void clickAddToCard(){
+    public FrameProduct clickAddToCard(){
         getClickAddCart().click();
+        return new FrameProduct(getWebDriver());
     }
 
 
@@ -60,7 +61,7 @@ public class ProductPage extends BasePage{
     public WebElement getQuantityBtnMinus() {return quantityBtnMinus;}
     public WebElement getQuantityBtnPlus() {return quantityBtnPlus;}
     public WebElement getDropdownSize() {return dropdownSize;}
-    public WebElement getSelectWhite() {return selectWhite;}
+    public WebElement getSelectBlack() {return selectBlack;}
     public WebElement getClickAddCart() {return clickAddCart;}
     public WebElement getNrSecond() {return nrSecond;}
 }

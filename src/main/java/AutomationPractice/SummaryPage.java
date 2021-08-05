@@ -10,12 +10,13 @@ public class SummaryPage extends BasePage{
         super(webDriver);
         PageFactory.initElements(getWebDriver(), this);
     }
+    @FindBy (css = "#cart_title") private WebElement summaryTitle;
     @FindBy (css = "#summary_products_quantity") private WebElement numberOfProductsSummary;
     @FindBy (css = ".step_current > span:nth-child(1)") private WebElement checkIfSummary;
     @FindBy (css = "td.cart_description > p:nth-child(1) > a:nth-child(1)") private WebElement summaryBlouse;
     @FindBy (css = "td.cart_description > small:nth-child(3) > a:nth-child(1)") private WebElement colorSizeSummary;
     @FindBy (css = ".label") private WebElement checkIfStockSummary;
-    @FindBy (css = "#product_price_2_10_0 > span:nth-child(1)") private WebElement checkUnitPriceSummary;
+    @FindBy (className = "price") private WebElement checkUnitPriceSummary;
     @FindBy (css = "#total_product_price_2_10_0") private WebElement checkTotalSummary;
     @FindBy (css = ".icon-trash") private WebElement deleteIconSummary;
     @FindBy (css = "#total_product") private WebElement checkTotalProductsSummary;
@@ -29,7 +30,12 @@ public class SummaryPage extends BasePage{
     public void clickDelete() {
         getDeleteIconSummary().click();
     }
+    public CreateOrLogIn clickProccedToCheckoutToLogin(){
+        getProceedToCheckoutSummary().click();
+        return new CreateOrLogIn(getWebDriver());
+    }
 
+    public WebElement getSummaryTitle() {return summaryTitle;}
     public WebElement getDeleteIconSummary() {return deleteIconSummary;}
     public WebElement getNumberOfProductsSummary() {return numberOfProductsSummary;}
     public WebElement getCheckIfSummary() {return checkIfSummary;}

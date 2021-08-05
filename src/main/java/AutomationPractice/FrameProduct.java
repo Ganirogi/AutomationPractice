@@ -22,6 +22,11 @@ public class FrameProduct extends BasePage{
     @FindBy (css = ".continue") private WebElement continueShoppingBtn;
     @FindBy (css = "a.btn:nth-child(2)") private WebElement proceedToCheckoutBtn;
 
+    public SummaryPage clickProceedToCheckout(){
+        getProceedToCheckoutBtn().click();
+        return new SummaryPage(getWebDriver());
+    }
+
     public WebElement getGreenTitle() {return greenTitle;}
     public WebElement getTextBlouse() {return textBlouse;}
     public WebElement getColorSize() {return colorSize;}

@@ -12,11 +12,11 @@ abstract class BaseTest {
 
     @Before
     public void init(){
-        System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","src/main/resources/drivers/chromedriver.exe");
         webDriver = new ChromeDriver();
-        /*System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver.exe");
+        /*System.setProperty("webdriver.gecko.driver", "src/main/resources/drivers/geckodriver.exe");
         webDriver = new FirefoxDriver();*/
-        webDriverWait = new WebDriverWait(getWebDriver(),3);
+        webDriverWait = new WebDriverWait(getWebDriver(),5);
         webDriver.manage().window().maximize();
         webDriver.manage().deleteAllCookies();
     }
