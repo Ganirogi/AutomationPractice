@@ -10,7 +10,6 @@ public class LoginPageCucumber {
     By txt_username = By.cssSelector("#email");
     By txt_password = By.cssSelector("#passwd");
     By btn_login = By.cssSelector("#SubmitLogin");
-    By text_myaccount = By.cssSelector(".page-heading");
 
     public LoginPageCucumber(WebDriver webDriver){
         this.driver = webDriver;

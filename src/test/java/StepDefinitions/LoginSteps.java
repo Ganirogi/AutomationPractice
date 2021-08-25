@@ -1,4 +1,4 @@
-package StepDefinition;
+package StepDefinitions;
 
 import Classes.LoginPageCucumber;
 import io.cucumber.java.en.And;
@@ -11,7 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class DemoLoginSteps {
+public class LoginSteps {
 
     WebDriver webDriver;
     WebDriverWait webDriverWait;

@@ -10,7 +10,7 @@ public class FrameProduct extends BasePage{
         super(webDriver);
         PageFactory.initElements(getWebDriver(), this);
     }
-    @FindBy (css = ".layer_cart_product > h2:nth-child(2)") private WebElement greenTitle;
+    @FindBy(css = ".layer_cart_product > h2:nth-child(2)") private WebElement greenTitle;
     @FindBy (css = "#layer_cart_product_title") private WebElement textBlouse;
     @FindBy (css = "#layer_cart_product_attributes") private WebElement colorSize;
     @FindBy (css = "#layer_cart_product_quantity") private WebElement checkQuantity;
@@ -25,6 +25,10 @@ public class FrameProduct extends BasePage{
     public SummaryPage clickProceedToCheckout(){
         getProceedToCheckoutBtn().click();
         return new SummaryPage(getWebDriver());
+    }
+
+    public void continueShopping(){
+        getContinueShoppingBtn().click();
     }
 
     public WebElement getGreenTitle() {return greenTitle;}
