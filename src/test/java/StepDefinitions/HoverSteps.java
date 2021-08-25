@@ -1,4 +1,4 @@
-package StepDefinition;
+package StepDefinitions;
 
 import AutomationPractice.BasePage;
 import AutomationPractice.FrameProduct;
