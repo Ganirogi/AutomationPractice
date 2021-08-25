@@ -11,9 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class SignInPage extends BasePage {
     @FindBy(className = "login")
     private WebElement login;
-//    @FindBy(css = "")
-//    private WebElement clickLogin;
-
+    @FindBy (css = "") private WebElement clickLogin;
     public SignInPage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(getWebDriver(), this);
@@ -26,11 +24,9 @@ public class SignInPage extends BasePage {
     }
 
 
+
     public WebElement getSignIn() {
         return login;
     }
-
-//    public WebElement getLogin() {
-//        return clickLogin;
-//    }
+    public WebElement getLogin() {return clickLogin;}
 }
