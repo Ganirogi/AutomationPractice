@@ -32,14 +32,13 @@ public class HoverTest extends BaseTest {
         productPage.selectSize();
         productPage.pickColorBlack();
         Assert.assertEquals("Text verify Quantity=2","2", productPage.getQuantityAmmount().getAttribute("value"));
-        System.out.println("The current value is: " + productPage.getQuantityAmmount().getAttribute("value"));
 
         // Verify before Checkout
 
         FrameProduct frameProduct = productPage.clickAddToCard();
-        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("span.ajax_block_cart_total:nth-child(2)")));
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("a.btn:nth-child(2)")));
         Assert.assertEquals("Verify Blouse", "Blouse", frameProduct.getTextBlouse().getText());
-        Assert.assertEquals("Verify color and size" , "Black, M", frameProduct.getColorSize().getText());
+        Assert.assertEquals("Verify color and size" , "Black, L", frameProduct.getColorSize().getText());
         Assert.assertEquals("Verify price" , "$54.00" , frameProduct.getCheckTotal().getText());
         Assert.assertEquals("Verify quantity", "2" , frameProduct.getCheckQuantity().getText());
         Assert.assertEquals("Verify Total Products", "2", frameProduct.getCheckTotalItems().getText());
@@ -54,7 +53,7 @@ public class HoverTest extends BaseTest {
         Assert.assertEquals("Verify Nr of Products", "2 Products", summaryPage.getNumberOfProductsSummary().getText());
         Assert.assertEquals("Verify 01. Summary", "01. Summary", summaryPage.getCheckIfSummary().getText());
         Assert.assertEquals("Verify Blouse", "Blouse", summaryPage.getSummaryBlouse().getText());
-        Assert.assertEquals("Verify Color,Size", "Color : Black, Size : M", summaryPage.getColorSizeSummary().getText());
+        Assert.assertEquals("Verify Color,Size", "Color : Black, Size : L", summaryPage.getColorSizeSummary().getText());
         Assert.assertEquals("Verify In Stock", "In stock", summaryPage.getCheckIfStockSummary().getText());
         Assert.assertEquals("Verify Total Products", "$54.00", summaryPage.getCheckTotalProductsSummary().getText());
         Assert.assertEquals("Verify Total Shipping", "$2.00", summaryPage.getCheckTotalShippingSummary().getText());
@@ -93,8 +92,6 @@ public class HoverTest extends BaseTest {
 
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".page-heading")));
         Assert.assertEquals("Checking Page", "PLEASE CHOOSE YOUR PAYMENT METHOD", paymentPage.getPaymentTitlePayment().getText());
-        System.out.println("Blouse Payment: " + paymentPage.getProductTypePayment().getText());
-
         CheckPaymentPage checkPaymentPage = paymentPage.clickPayByCheck();
 
         // CheckPayment Page
@@ -108,10 +105,6 @@ public class HoverTest extends BaseTest {
 
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".page-heading")));
         Assert.assertEquals("Final Verification", "$56.00", finalCheckPage.getLastPriceCheckFinalCheck().getText());
-
-
-
-        Thread.sleep(5000);
 
     }
 

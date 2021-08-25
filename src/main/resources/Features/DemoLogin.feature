@@ -11,4 +11,3 @@ Feature: Verify login functionality
       | username | password | verify if logged |
       | dedi.alex.121@gmail.com | parola123 | MY ACCOUNT |
       | test@gmail.com          | test123   | MY ACCOUNT |
-

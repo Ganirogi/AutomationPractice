@@ -14,7 +14,7 @@ public class HoverMainPage extends BasePage{
 
     Actions actions = new Actions(getWebDriver());
 
-    @FindBy (css = "#homefeatured > li:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")
+    @FindBy(css = "#homefeatured > li:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")
     private WebElement hoverBlouse;
 
     @FindBy (xpath = "/html[1]/body[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[2]/div[1]/div[2]/div[2]/a[2]")
