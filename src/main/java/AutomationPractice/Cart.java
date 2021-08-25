@@ -24,7 +24,7 @@ public class Cart extends BasePage{
     private WebElement sku;
 
     //public String getSkuName(){
-   //     return getSku().getText();
+    //     return getSku().getText();
     //}
 
     public String getTotalPay(){

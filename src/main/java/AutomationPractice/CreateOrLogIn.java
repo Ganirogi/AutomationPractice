@@ -45,10 +45,13 @@ public class CreateOrLogIn extends BasePage{
         getPassword().sendKeys(password);
     }
 
-    public YourAccount signIn(){
+    public AddressesPage signIn(){
         getSignIn().click();
-        new WebDriverWait(getWebDriver(),5).until(ExpectedConditions.visibilityOfElementLocated(By.className("account")));
+        return new AddressesPage(getWebDriver());
+    }
 
+    public YourAccount clickSignin() {
+        getSignIn().click();
         return new YourAccount(getWebDriver());
     }
 

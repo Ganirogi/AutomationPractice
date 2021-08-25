@@ -22,11 +22,10 @@ public class CasualDresses extends BasePage{
     private WebElement productBlock;
 
     public QuickView clickQuickView(){
-        Actions action = new Actions(webDriver);
+        Actions action = new Actions(getWebDriver());
         action.moveToElement(getProductBlock()).build().perform();
         new WebDriverWait(getWebDriver(),5).until(ExpectedConditions.visibilityOf(getPrintedDress()));
         getPrintedDress().click();
-
         return new QuickView(getWebDriver());
     }
 
