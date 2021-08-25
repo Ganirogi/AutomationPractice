@@ -60,9 +60,7 @@ public class ProductPage extends BasePage{
         getSelectWhite().click();
     }
 
-    public void pickColor(String color) {
 
-    }
     public FrameProduct clickAddToCard(){
         getClickAddCart().click();
         return new FrameProduct(getWebDriver());
