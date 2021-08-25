@@ -21,7 +21,7 @@ public class RegisterSteps {
     @Given("browser is open")
     public void browser_is_open() {
         System.out.println("Browser is open");
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","src/main/resources/drivers/chromedriver.exe");
         webDriver = new ChromeDriver();
         webDriver.manage().window().maximize();
     }
@@ -41,7 +41,7 @@ public class RegisterSteps {
     }
 
     @And("user create account")
-    public void user_create_account() throws InterruptedException {
+    public void user_create_account()  {
         accountInfo = new AccountInfo(webDriver);
         accountInfo.completeRegisterForm("test", "test", "testpassword", "17779 HACIENDA BLVD , CALIFORNIA CITY, CA", "California City", "93505", "6613909725", "home");
         accountInfo.clickRegister();
