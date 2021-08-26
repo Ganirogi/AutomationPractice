@@ -106,6 +106,10 @@ public class HoverTest extends BaseTest {
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".page-heading")));
         Assert.assertEquals("Final Verification", "$56.00", finalCheckPage.getLastPriceCheckFinalCheck().getText());
 
+
+
+        Thread.sleep(5000);
+
     }
 
 }
