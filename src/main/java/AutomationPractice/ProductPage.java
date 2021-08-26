@@ -47,9 +47,9 @@ public class ProductPage extends BasePage{
         s.selectByIndex(2);
     }
 
-    public void selectSizeOfProduct(Integer x){
+    public void selectSizeOfProduct(String x){
         Select s = new Select(getDropdownSize());
-        s.selectByIndex(x);
+        s.selectByVisibleText(x);
     }
 
     public void pickColorBlack(){
@@ -66,14 +66,9 @@ public class ProductPage extends BasePage{
         return new FrameProduct(getWebDriver());
     }
 
-    public void selectTheQuantity(String quantity){
+    public void selectTheQuantity(Integer quantity){
         act.doubleClick(getQuantityAmmount()).perform();
-        act.sendKeys(quantity);
-    }
-
-    public void untilOne(){
-        getQuantityAmmount().sendKeys(Keys.BACK_SPACE);
-        getQuantityAmmount().sendKeys("1");
+        act.sendKeys(String.valueOf(quantity)).perform();
     }
 
     public WebElement getNameBlouse(){return nameBlouse;}
