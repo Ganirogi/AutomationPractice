@@ -1,5 +1,6 @@
 package Classes;
 
+import AutomationPractice.AddressesPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -20,8 +21,9 @@ public class LoginPageCucumber {
         driver.findElement(txt_password).sendKeys(password);
     }
 
-    public void clickLoginButton(){
+    public AddressesPage clickLoginButton(){
         driver.findElement(btn_login).click();
+        return new AddressesPage(driver);
     }
 
 }
