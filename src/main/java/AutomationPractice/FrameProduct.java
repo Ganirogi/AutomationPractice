@@ -19,7 +19,7 @@ public class FrameProduct extends BasePage{
     @FindBy (css = ".ajax_block_products_total") private WebElement totalSum;
     @FindBy (css = "span.ajax_cart_shipping_cost:nth-child(2)") private WebElement priceShipping;
     @FindBy (css = "span.ajax_block_cart_total:nth-child(2)") private WebElement priceTotal;
-    @FindBy (css = ".continue") private WebElement continueShoppingBtn;
+    @FindBy (css = "#layer_cart > div.clearfix > div.layer_cart_cart.col-xs-12.col-md-6 > div.button-container > span") private WebElement continueShoppingBtn;
     @FindBy (css = "a.btn:nth-child(2)") private WebElement proceedToCheckoutBtn;
 
     public SummaryPage clickProceedToCheckout(){
