@@ -11,7 +11,7 @@ public class QuickViewTest extends BaseTest{
         SignInPage signIn = new SignInPage(getWebDriver());
         CreateOrLogIn createOrLogIn = signIn.clickSignIn();
         createOrLogIn.logIn("dinugv94@gmail.com", "P4ssword!");
-        YourAccount yourAccount = createOrLogIn.signIn();
+        YourAccount yourAccount = createOrLogIn.clickSignin();
         yourAccount.hoverOver();
         CasualDresses casualDresses = yourAccount.clickCasualDresses();
         QuickView quickView = casualDresses.clickQuickView();

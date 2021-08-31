@@ -23,8 +23,6 @@ public class SignInPage extends BasePage {
         return new CreateOrLogIn(getWebDriver());
     }
 
-
-
     public WebElement getSignIn() {
         return login;
     }
